@@ -7,7 +7,7 @@
 <body>
     <h1>사원 입력하기</h1>
 
-    <form name="emp" method="post">
+    <form name="emp" method="post"> <%--id="emp"--%>
         <div>사원번호 : <input type="text" name="employee_id"></div>
         <div>이름 : <input type="text" name="first_name"></div>
         <div>성 : <input type="text" name="lname"></div>

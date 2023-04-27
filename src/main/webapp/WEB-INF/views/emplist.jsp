@@ -26,7 +26,5 @@
         </c:forEach>
     </table>
 
-<p>${emp}</p>
-
 </body>
 </html>

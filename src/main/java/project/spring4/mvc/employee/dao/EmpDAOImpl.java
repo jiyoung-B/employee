@@ -18,7 +18,7 @@ public class EmpDAOImpl implements EmpDAO{
     private static final Logger logger = LogManager.getLogger(EmpDAOImpl.class);
 
     @Value("#{jdbc['selectSQL']}") private String selectSQL;
-    @Value("#{jdbc['selectSQL']}") private String insertSQL;
+    @Value("#{jdbc['insertSQL']}") private String insertSQL;
     private JdbcTemplate jdbcTemplate;
     @Autowired
     public EmpDAOImpl(JdbcTemplate jdbcTemplate) {

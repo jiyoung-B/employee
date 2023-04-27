@@ -32,9 +32,12 @@ public class EmpController {
     @PostMapping("/add")
     public ModelAndView newEmp(EmpVO emp){
         ModelAndView mv = new ModelAndView();
-        if(empsrv.newEmp(emp))
-            mv.addObject("emp", emp);
-        mv.setViewName("empok");
+        String view = "empfail";
+        if(empsrv.newEmp(emp)) {
+            //mv.addObject("emp", emp);
+            view = "redirect:/emplist";
+        }
+        mv.setViewName(view);
         return mv;
 
     }
