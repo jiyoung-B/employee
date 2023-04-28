@@ -33,4 +33,18 @@ public class EmpServiceImpl implements EmpService{
     public List<EmpVO> readEmp() {
         return empdao.selectEmp();
     }
+
+    @Override
+    public boolean modifyEmp(EmpVO emp) {
+        boolean result = false;
+        if (empdao.updateEmp(emp) > 0){
+            result = true;
+        }
+        return result;
+    }
+
+    @Override
+    public EmpVO readOneEmp(int employeeId) {
+        return empdao.selectOneEmp(employeeId);
+    }
 }

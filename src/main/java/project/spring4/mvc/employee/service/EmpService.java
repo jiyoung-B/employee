@@ -8,4 +8,8 @@ public interface EmpService {
     boolean newEmp(EmpVO emp);
 
     List<EmpVO> readEmp();
+
+    boolean modifyEmp(EmpVO emp);
+
+    EmpVO readOneEmp(int employeeId);
 }

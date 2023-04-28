@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="employee">
+    <select id="selectsql" statementType="PREPARED" resultType="project.spring4.mvc.employee.model.EmpVO">
+        select employee_id, first_name, email, job_id, department_id from employees order by employee_id
+    </select>
+
+    <select id="selectonesql" statementType="PREPARED" resultType="project.spring4.mvc.employee.model.EmpVO">
+        select * from employees where employee_id = #{employee_id}
+    </select>
+
+    <insert id="insertsql" statementType="PREPARED" parameterType="project.spring4.mvc.employee.model.EmpVO">
+        insert into employees values (#{employee_id}, #{first_name}, #{email}, #{job_id}, #{department_id}, #{lname}, #{phone}, #{hdate}, #{sal}, #{comm}, #{mgrid}
+    </insert>
+    <update id="updatesql" statementType="PREPARED" parameterType="project.spring4.mvc.employee.model.EmpVO">
+        update employees set employee_id = #{employee_id}, first_name = #{first_name}, last_name = #{lname}, email = #{email}, phone = #{phone},
+        hdate = #{hdate}, job_id = #{job_id}, sal = #{sal}, comm = #{comm}, mgrid = #{mgrid} department_id = #{department_id} where employee_id = #{employee_id}
+    </update>
+    <delete id="deletesql" statementType="PREPARED" parameterType="int">
+        delete from employees where employee_id = #{employee_id}
+    </delete>
+</mapper>

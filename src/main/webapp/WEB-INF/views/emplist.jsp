@@ -17,7 +17,7 @@
 <%--for(SungJuk sj : sjs)--%>
         <c:forEach items="${emp}" var="emp">
             <tr>
-                <td>${emp.employee_id}</td>
+                <td><a href="/view?employee_id=${emp.employee_id}">${emp.employee_id}</a></td>
                 <td>${emp.first_name}</td>
                 <td>${emp.email}</td>
                 <td>${emp.job_id}</td>

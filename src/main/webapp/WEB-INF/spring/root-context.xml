@@ -9,9 +9,9 @@
     <context:property-placeholder
             location="/WEB-INF/jdbc.properties" />
 
-    <!-- jdbc properties : 모든 파일에 속성값 적용 -->
-    <util:properties id="jdbc"
-                     location="/WEB-INF/jdbc.properties" />
+<!--    &lt;!&ndash; jdbc properties : 모든 파일에 속성값 적용 &ndash;&gt;-->
+<!--    <util:properties id="jdbc"-->
+<!--                     location="/WEB-INF/jdbc.properties" />-->
 
     <!-- dbcp datasource -->
     <bean id="dbcpDataSource"
@@ -19,8 +19,21 @@
           p:driverClassName="${DRV}" p:url="${URL}"
           p:username="${USR}" p:password="${PWD}" />
 
-    <!-- jdbc template -->
-    <bean id="jdbcTemplate"
-          class="org.springframework.jdbc.core.JdbcTemplate"
-          p:dataSource="dataSource" p:dataSource-ref="dbcpDataSource" />
+<!--    &lt;!&ndash; jdbc template &ndash;&gt;-->
+<!--    <bean id="jdbcTemplate"-->
+<!--          class="org.springframework.jdbc.core.JdbcTemplate"-->
+<!--          p:dataSource="dataSource" p:dataSource-ref="dbcpDataSource" />-->
+
+    <!-- mybatis3 -->
+    <bean id="sqlSessionFactory"
+          class="org.mybatis.spring.SqlSessionFactoryBean"
+          p:dataSource-ref="dbcpDataSource"
+          p:mapperLocations="classpath:mybatis3/employeeMapper.xml"/>
+
+
+    <bean id="sqlSession"
+          class="org.mybatis.spring.SqlSessionTemplate" >
+        <constructor-arg ref="sqlSessionFactory" index="0"/>
+    </bean>
+
 </beans>

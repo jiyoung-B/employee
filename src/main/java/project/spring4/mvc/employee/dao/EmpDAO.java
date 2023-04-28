@@ -8,5 +8,9 @@ public interface EmpDAO {
     int insertEmp(EmpVO emp);
     List<EmpVO> selectEmp();
 
+    EmpVO selectOneEmp(int employee_id);
+
+    int updateEmp(EmpVO emp);
+
 
 }

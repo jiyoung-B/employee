@@ -25,6 +25,17 @@ public class EmpVO {
         this.department_id = department_id;
     }
 
+    public EmpVO(int employee_id, String first_name, String lname,
+                 String email, String job_id, String phone, int department_id, String hdate, int sal, double comm, int mgrid) {
+        this(employee_id, first_name, email, job_id, department_id);
+        this.lname = lname;
+        this.phone = phone;
+        this.hdate = hdate;
+        this.sal = sal;
+        this.comm = comm;
+        this.mgrid = mgrid;
+    }
+
     public String getLname() {
         return lname;
     }
