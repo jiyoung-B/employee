@@ -9,8 +9,10 @@
 
         <Logger name="org.springframework" level="info"/>
         <Logger name="project.spring4.mvc.employee" level="info"/>
+        <Logger name="org.springframework.jdbc.core" level="trace" />
+        <Logger name="org.mybatis.*" level="debug"/>
 
-        <Root level="error">
+        <Root level="debug">
             <AppenderRef ref="Console"/>
         </Root>
     </Loggers>
